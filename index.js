@@ -35,6 +35,7 @@ var persons = [
 app.use(express.json())
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :reqBody'))
 app.use(cors())
+app.use(express.static('build'))
 app.get("/api",(request,response)=>{
     response.send("<h1>Welcome to Persons API my friend</h1>")
 })
@@ -83,7 +84,7 @@ app.delete("/api/persons/:id",(request,response)=>{
 })
 
 app.get("/info",(request,response)=>{
-    response.send("<p>Phonebook has info for "+persons.length+" people</p> <p> "+new Date().toUTCString()+" </p> ")
+    response.send("<p>Phonebook has info for <strong>"+persons.length+"</strong> people</p> <p> "+new Date().toUTCString()+" </p> ")
 })
 
 
