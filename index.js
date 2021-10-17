@@ -4,7 +4,7 @@ const cors = require("cors")
 morgan.token("reqBody",(req=>JSON.stringify(req.body)))
 const app=express()
 
-const PORT=process.env.port||3001
+const PORT=process.env.PORT || 3001
 const baseUrl="/"
 function generateRandomNumber() {
     return Math.floor(Math.random() * 999999999);
